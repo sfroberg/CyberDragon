@@ -1,0 +1,44 @@
+My incomplete todo list:
+
+----------------------------------------------
+- Make sure that it won't crash at startup or otherwise.
+  Please people, report if you have crashes.
+  Otherwise I will just continue happily adding more and more stuff without
+  even knowing if people can use them. 
+  I just have one windows machine here that I can test with. 
+  So please, please, please report crashes with details of your 
+  machine, operatings system, possbile screenshots and what you did to make it crash.
+  Priority: super high!!! 
+
+----------------------------------------------
+- Add more proxies.
+  Add finer grained proxy selection that will allow automatic proxy selection
+  depending of the URL visited, based by predefined rules. This way you can use
+  proxies for your everyday surfing while for example, your webmail or online bank you would
+  use direct connection. And all would happen automatically.  
+  Add proxy updater that will do timed checking of proxies and keeping only 
+  alive proxies active.
+  Add proxychaining.
+  Priority: very high  
+
+----------------------------------------------
+- Add HTTP client/server header view with ability to add,remove and
+  modify client headers. 
+  Also add support for easily copying cookie stuff from Cookie manager
+  to this view.
+  Priority: high
+----------------------------------------------
+- Add tooltips to General settings tab. 
+  Priority: low
+----------------------------------------------
+- Make self-extracting .exe installer.
+  Priority: low
+----------------------------------------------
+- Make it looking pretty.
+  Priority: lowest of low. Actually I have had few ideas how to make this skinable.
+  So you can make it as pretty as you like in the future and I will add the 
+  most prettiest thing as default :-)
+
+
+
+

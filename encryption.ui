@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>encryption</class>
+ <widget class="QWidget" name="encryption">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>328</width>
+    <height>794</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_5">
+   <item row="0" column="1">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>76</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>23</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="HTTPSEnforcing_groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+     border: 2px solid gray;
+     border-radius: 5px;
+/*    margin-top: 1ex;*/ /* leave space at the top for the title */
+ }
+
+ QGroupBox::title {
+background-color: transparent;
+     subcontrol-position: top left; /* position at the top left*/ 
+/*     padding:2 13px;*/
+    padding: 3 3px;
+/*     subcontrol-origin: margin;*/
+ }</string>
+     </property>
+     <property name="title">
+      <string>HTTPS Enforcing</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="HTTPSEnforcing_checkBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;HTTPS Enforcing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;When enabled this setting will try to &lt;span style=&quot; font-weight:600;&quot;&gt;enforce HTTPS encryption&lt;/span&gt; for every site that you visit. This is similar to HTTPS Everywhere Firefox extension from &lt;span style=&quot; font-weight:600;&quot;&gt;Electronic Frontier Foundation (EFF)&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;However, there is one major difference with this implementation and EFF's:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;This implementation does not as &lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;yet&lt;/span&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; use regular expression rules when encountering unsecure https:// to http:// &lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;redirection&lt;/span&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; for any other domain &lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;except Google's&lt;/span&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; (read below for further info). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Otherwise HTTPS will be automatically used in these cases:&lt;/p&gt;&lt;p&gt;- Any address you type to URL bar without leading http:// (for example: &lt;span style=&quot; font-style:italic;&quot;&gt;en.wikipedia.org&lt;/span&gt; will change to &lt;span style=&quot; font-style:italic;&quot;&gt;https://en.wikipedia.org&lt;/span&gt; automatically)&lt;/p&gt;&lt;p&gt;- Any http:// link you click will also tried to access first with https and if that fails then with normal http.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;If the site that you are trying to visit does not offer https:// version or if the https:// version they offer is broken then this will fallback to unsecure http:// connection. However, you will always see if the connection is encrypted or not by checking if the little padlock icon is closed and also by checking if the URL bar has https:// in front of the address.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note 2&lt;/span&gt;: Setting this feature on will also prevent Google from tracking you by turning on option &lt;span style=&quot; font-weight:600;&quot;&gt;Prevent Google Tracking Redirect Links &lt;/span&gt;from &lt;span style=&quot; font-weight:600;&quot;&gt;General &lt;/span&gt;tab (key shortcut Ctrl + G). This is acomplished by dynamically rewriting the links that Google tries to offer you in it's search results.&lt;/p&gt;&lt;p&gt;For example, the following Google Tracking Redirect link from Google Search results page: &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;https://www.google.fi/url?q=http://en.wikipedia.org/wiki/Knight&amp;amp;sa=U&amp;amp;ei=tLckU96_CcuJhQf7nYG4Bw&amp;amp;ved=0CCAQFjAA&amp;amp;usg=AFQjCNFoh5hRriPh-IyM5PekEfve73V5Ww &lt;/span&gt;&lt;/p&gt;&lt;p&gt;would be changed to it's normal, correct form:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;http://en.wikipedia.org/wiki/Knight&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Besides preventing Google from tracking you HTTPS Enforcing needs this feature so that it could further change that link to encrypted secure version of:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;https://en.wikipedia.org/wiki/Knight&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note 3&lt;/span&gt; This is still an experimental feature!&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;HTTPS Enforcing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;When enabled this setting will try to &lt;span style=&quot; font-weight:600;&quot;&gt;enforce HTTPS encryption&lt;/span&gt; for every site that you visit. This is similar to HTTPS Everywhere Firefox extension from &lt;span style=&quot; font-weight:600;&quot;&gt;Electronic Frontier Foundation (EFF)&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;However, there is one major difference with this implementation and EFF's:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;This implementation does not as &lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;yet&lt;/span&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; use regular expression rules when encountering unsecure https:// to http:// &lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;redirection&lt;/span&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; for any other domain &lt;/span&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;except Google's&lt;/span&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; (read below for further info). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Otherwise HTTPS will be automatically used in these cases:&lt;/p&gt;&lt;p&gt;- Any address you type to URL bar without leading http:// (for example: &lt;span style=&quot; font-style:italic;&quot;&gt;en.wikipedia.org&lt;/span&gt; will change to &lt;span style=&quot; font-style:italic;&quot;&gt;https://en.wikipedia.org&lt;/span&gt; automatically)&lt;/p&gt;&lt;p&gt;- Any http:// link you click will also tried to access first with https and if that fails then with normal http.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;If the site that you are trying to visit does not offer https:// version or if the https:// version they offer is broken then this will fallback to unsecure http:// connection. However, you will always see if the connection is encrypted or not by checking if the little padlock icon is closed and also by checking if the URL bar has https:// in front of the address.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note 2&lt;/span&gt;: Setting this feature on will also prevent Google from tracking you by turning on option &lt;span style=&quot; font-weight:600;&quot;&gt;Prevent Google Tracking Redirect Links &lt;/span&gt;from &lt;span style=&quot; font-weight:600;&quot;&gt;General &lt;/span&gt;tab (key shortcut Ctrl + G). This is acomplished by dynamically rewriting the links that Google tries to offer you in it's search results.&lt;/p&gt;&lt;p&gt;For example, the following Google Tracking Redirect link from Google Search results page: &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;https://www.google.fi/url?q=http://en.wikipedia.org/wiki/Knight&amp;amp;sa=U&amp;amp;ei=tLckU96_CcuJhQf7nYG4Bw&amp;amp;ved=0CCAQFjAA&amp;amp;usg=AFQjCNFoh5hRriPh-IyM5PekEfve73V5Ww &lt;/span&gt;&lt;/p&gt;&lt;p&gt;would be changed to it's normal, correct form:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;http://en.wikipedia.org/wiki/Knight&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Besides preventing Google from tracking you HTTPS Enforcing needs this feature so that it could further change that link to encrypted secure version of:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;https://en.wikipedia.org/wiki/Knight&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note 3&lt;/span&gt; This is still an experimental feature!&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Try to use HTTPS whenever possible</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QGroupBox" name="MCB_groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>2</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+     border: 2px solid gray;
+     border-radius: 5px;
+/*    margin-top: 1ex;*/ /* leave space at the top for the title */
+ }
+
+ QGroupBox::title {
+background-color: transparent;
+     subcontrol-position: top left; /* position at the top left*/ 
+/*     padding:2 13px;*/
+    padding: 3 3px;
+/*     subcontrol-origin: margin;*/
+ }</string>
+      </property>
+      <property name="title">
+       <string>Mixed Content Blocker (MCB)</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="MCB_checkBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Block mixed content</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>160</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="AddDisabledMCBURL_pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="default.qrc">
+             <normaloff>:/icons/16x16/list-add-5.png</normaloff>:/icons/16x16/list-add-5.png</iconset>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" rowspan="3">
+          <widget class="QTreeWidget" name="DisableMCB_treeWidget">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <column>
+            <property name="text">
+             <string>Disable MCB for following URLs</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="RemoveDisabledMCBURL_pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="default.qrc">
+             <normaloff>:/icons/16x16/list-remove-5.png</normaloff>:/icons/16x16/list-remove-5.png</iconset>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="CopyToMCB_pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="default.qrc">
+             <normaloff>:/icons/16x16/go-up-10.png</normaloff>:/icons/16x16/go-up-10.png</iconset>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QStackedWidget" name="BlockedMCB_stackedWidget">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>75</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+     border: 2px solid gray;
+     border-radius: 5px;
+/*    margin-top: 1ex;*/ /* leave space at the top for the title */
+ }
+
+ QGroupBox::title {
+background-color: transparent;
+     subcontrol-position: top left; /* position at the top left*/ 
+/*     padding:2 13px;*/
+    padding: 3 3px;
+/*     subcontrol-origin: margin;*/
+ }</string>
+      </property>
+      <property name="title">
+       <string>Supported Ciphers &amp;&amp; their order of preference</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="MoveCipherUp_pushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="default.qrc">
+           <normaloff>:/icons/16x16/go-up-10.png</normaloff>:/icons/16x16/go-up-10.png</iconset>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" rowspan="3">
+        <widget class="QTreeWidget" name="Ciphers_treeWidget">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="sortingEnabled">
+          <bool>false</bool>
+         </property>
+         <property name="columnCount">
+          <number>6</number>
+         </property>
+         <column>
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>PFS</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Protocol</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Authentication</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Encryption</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Key exchange</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="MoveCipherDown_pushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="default.qrc">
+           <normaloff>:/icons/16x16/go-down-10.png</normaloff>:/icons/16x16/go-down-10.png</iconset>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>211</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="default.qrc"/>
+ </resources>
+ <connections/>
+</ui>

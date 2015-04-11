@@ -1,0 +1,4 @@
+127.0.0.1:9150
+
+https://check.torproject.org/?lang=en-US&small=1&uptodate=1
+
