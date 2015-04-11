@@ -26,8 +26,11 @@ Donations:
 http://www.binarytouch.com/windows.htm
 
 Feedback, suggestions, fixes etc...:
+
 http://www.binarytouch.com/contact.php
+
 or (in the case of emergency that above site is down)
+
 cyberdragonbrowser@gmail.com
 
 Blog:
