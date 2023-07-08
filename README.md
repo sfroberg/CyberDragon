@@ -23,15 +23,11 @@ Still in beta but the following features have been implemented:
 Please see the CyberDragon_Build_Instructions.pdf
 
 Donations:
-http://www.binarytouch.com/windows.htm
+bc1qpmxmpatdnhlpsn8fmmdunjxnuaua8mc8theums
 
 Feedback, suggestions, fixes etc...:
+stefan.froberg@protonmail.com
 
-http://www.binarytouch.com/contact.php
 
-or (in the case of emergency that above site is down)
-
-cyberdragonbrowser@gmail.com
-
-Blog:
+Old Blog:
 http://sourceforge.net/p/cyberdragonbrowser/blog/?source=navbar
